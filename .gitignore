@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Large artifacts / models / data
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+data/
+checkpoints/
+outputs/

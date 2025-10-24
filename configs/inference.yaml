@@ -1,0 +1,48 @@
+env:
+  sumocfg: data/sample_nets/grid.sumocfg
+  step_length: 1.0
+  gui: false
+phases:
+  J0: ["GrGr", "rGrG"]
+  J1: ["GrGr", "rGrG"]
+  J2: ["GrGr", "rGrG"]
+  J3: ["GrGr", "rGrG"]
+model:
+  input_dims:
+    junction: 6
+    lane: 5
+    vehicle: 3
+  hgat:
+    hidden_dim: 64
+    dropout: 0.2
+    history: 4
+    num_actions: 2
+  checkpoint: checkpoints/marl_policy.pt
+control:
+  min_green: 5.0
+  max_green: 60.0
+  yellow_duration: 3.0
+  uncertainty_threshold: 0.3
+  fallback_mode: queue
+graph:
+  lane_to_junction:
+    E0_0: J1
+    E1_0: J0
+    E2_0: J2
+    E3_0: J0
+    E4_0: J3
+    E5_0: J1
+    E6_0: J3
+    E7_0: J2
+  lane_successors:
+    E0_0: [E2_0, E4_0]
+    E1_0: [E3_0, E5_0]
+    E2_0: [E6_0, E1_0]
+    E3_0: [E0_0, E7_0]
+    E4_0: [E7_0, E0_0]
+    E5_0: [E2_0, E4_0]
+    E6_0: [E5_0, E3_0]
+    E7_0: [E6_0, E1_0]
+inference:
+  mc_passes: 5
+loop_sleep: 0.5

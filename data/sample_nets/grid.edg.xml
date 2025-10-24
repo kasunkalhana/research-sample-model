@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges>
+  <!-- horizontal -->
+  <edge id="E0" from="J0" to="J1" numLanes="1" speed="13.9" />
+  <edge id="E1" from="J1" to="J0" numLanes="1" speed="13.9" />
+  <!-- vertical left -->
+  <edge id="E2" from="J0" to="J2" numLanes="1" speed="13.9" />
+  <edge id="E3" from="J2" to="J0" numLanes="1" speed="13.9" />
+  <!-- vertical right -->
+  <edge id="E4" from="J1" to="J3" numLanes="1" speed="13.9" />
+  <edge id="E5" from="J3" to="J1" numLanes="1" speed="13.9" />
+  <!-- bottom horizontal -->
+  <edge id="E6" from="J2" to="J3" numLanes="1" speed="13.9" />
+  <edge id="E7" from="J3" to="J2" numLanes="1" speed="13.9" />
+</edges>

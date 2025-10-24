@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+  <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" width="2" minGap="2.5" maxSpeed="13.9"/>
+
+  <!-- Each route below avoids immediate reversal at a junction -->
+  <!-- r0: J1->J0 -> J0->J2 -->
+  <route id="r0" edges="E1 E2"/>
+  <!-- r1: J2->J0 -> J0->J1 -->
+  <route id="r1" edges="E3 E0"/>
+  <!-- r2: J3->J2 -> J2->J0 (instead of U-turn back to J3) -->
+  <route id="r2" edges="E7 E3"/>
+  <!-- r3: J3->J1 -> J1->J0 (instead of U-turn back to J3) -->
+  <route id="r3" edges="E5 E1"/>
+
+  <flow id="f0" begin="0" end="3600" probability="0.1" type="car" route="r0"/>
+  <flow id="f1" begin="0" end="3600" probability="0.1" type="car" route="r1"/>
+  <flow id="f2" begin="0" end="3600" probability="0.1" type="car" route="r2"/>
+  <flow id="f3" begin="0" end="3600" probability="0.1" type="car" route="r3"/>
+</routes>

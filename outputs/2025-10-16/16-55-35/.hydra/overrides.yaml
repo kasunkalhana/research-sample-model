@@ -1,0 +1,4 @@
+- env.sumocfg_path=data/sample_nets/grid.sumocfg
+- trainer.episodes=200
+- trainer.max_steps=150
+- trainer.batch_size=64

@@ -1,0 +1,2 @@
+- env.gui=true
+- model.checkpoint=checkpoints/hgat_policy.pt
