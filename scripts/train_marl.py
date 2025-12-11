@@ -50,7 +50,7 @@ def main(cfg: DictConfig) -> None:
     ckpt_path = Path(to_absolute_path(cfg.checkpoint))
     ckpt_path.parent.mkdir(parents=True, exist_ok=True)
     torch.save({"actor": actor.state_dict(), "critic": critic.state_dict()}, ckpt_path)
-    torch.save(model.state_dict(), "checkpoints/hgat_policy.pt")
+    torch.save(actor.state_dict(), "checkpoints/hgat_policy.pt")
 
 
 if __name__ == "__main__":

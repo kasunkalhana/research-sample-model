@@ -1,7 +1,9 @@
+defaults:
+  - _self_ 
 mode: train
-steps: 3600
-output: data/ssl_rollouts.parquet
-dataset: data/ssl_rollouts.parquet
+steps: 10800
+output: recordings/rollouts.parquet
+dataset: ${output}
 checkpoint: checkpoints/ssl_encoder.pt
 phases:
   J0: ["GrGr", "rGrG"]
@@ -9,12 +11,12 @@ phases:
   J2: ["GrGr", "rGrG"]
   J3: ["GrGr", "rGrG"]
 trainer:
-  epochs: 1
+  epochs: 50
   lr: 0.001
-  batch_size: 8
+  batch_size: 32
   history: 4
 model:
-  hidden_dim: 32
+  hidden_dim: 64
 env:
   sumocfg: data/sample_nets/grid.sumocfg
   step_length: 1.0
